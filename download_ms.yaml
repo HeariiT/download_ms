@@ -1,0 +1,65 @@
+swagger: '2.0'
+info:
+  version: 1.0.0
+  title: Download microservice
+  description: Ruby on Rails
+  contact:
+    name: Luis Ernesto Gil Castellanos
+    email: luegilca@unal.edu.co
+  license:
+    name: Software Architecture 2017-II
+host: '192.168.99.101:3006'
+basePath: /
+schemes:
+  - http
+consumes:
+  - application/json
+produces:
+  - audio/mp3
+paths:
+  /download:
+    post:
+      summary: >-
+        Download a song from RackSpace Cloud, stores in temporary file and sends
+        that mp3 file as response
+      operationId: download
+      parameters:
+        - name: url
+          in: body
+          required: true
+          description: Download Object
+          schema:
+            $ref: '#/definitions/Download'
+      responses:
+        '200':
+          description: Ok
+        '400':
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '404':
+          description: Not found
+          schema:
+            $ref: '#/definitions/ErrorModel'
+        '500':
+          description: Internal Server Error (Unexpected error)
+          schema:
+            $ref: '#/definitions/ErrorModel'
+definitions:
+  Download:
+    type: object
+    properties:
+      url:
+        type: string
+  ErrorModel:
+    type: object
+    required:
+      - message
+      - code
+    properties:
+      message:
+        type: string
+      code:
+        type: number
+      description:
+        type: object

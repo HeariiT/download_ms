@@ -1,0 +1,31 @@
+{
+	"variables": [],
+	"info": {
+		"name": "download_ms",
+		"_postman_id": "4ec30fc1-461f-a1f5-698e-46cf6b1983b4",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "download(url)",
+			"request": {
+				"url": "http://192.168.99.101:3006/download",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"url\":\"http://2551e2090218a5286d57-a51e93f1409714fd1bfb9edcbb1629ea.r46.cf2.rackcdn.com/uploads/attachment/1/NIGHTWISH_-_%C3%89lan__OFFICIAL_VIDEO_.mp3\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
