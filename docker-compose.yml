@@ -1,6 +1,6 @@
 version: '2'
 services:
-  download_ms:
+  download-ms:
     build: .
     command: bash -c "sleep 40 && rm -f tmp/pids/server.pid && bundle exec rails s -p 3006 -b '0.0.0.0'"
     ports: 
