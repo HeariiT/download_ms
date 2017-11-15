@@ -10,6 +10,8 @@ class DownloadController < ApplicationController
     if unpermitted.length == 0
 
       sanitized_url = params[:url]
+      puts sanitized_url
+      sanitized_url = 'http://192.168.99.103:3002' + sanitized_url
       raw_url = URI.parse(sanitized_url)
       filename = raw_url.path.split('/').last
       path = Rails.root + 'tmp/' + filename
